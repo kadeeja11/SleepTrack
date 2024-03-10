@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Sleep Tracker</title>
+    <link rel="stylesheet" href="sleeptrack.css">
+</head>
+<body>
+<div class="container">
+    <div id="welcomeMessage" class="welcome-message"></div> <!-- New div for welcome message -->
+    <h1>Daily Sleep Tracker</h1>
+    <div class="new-entry">
+        <form id="sleepForm">
+            <input type="date" id="dateInput" required>
+            <input type="time" id="sleepTimeInput" required>
+            <input type="time" id="wakeUpTimeInput" required>
+            <button type="submit">Submit Sleep Entry</button>
+        </form>
+    </div>
+    <div class="content">
+        <div class="graph">
+            <h2>Sleep Duration</h2>
+            <div class="graph-container">
+                <canvas id="sleepChart"></canvas>
+            </div>
+        </div>
+        <div class="sleep-stats">
+            <h2>Sleep Stats</h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Time of Sleep</th>
+                    <th>Wake Up Time</th>
+                    <th>Sleep Duration</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- Table rows will be populated dynamically -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="sleeptrack.js"></script>
+<script>
+    // Extract the username from the URL
+    var urlParams = new URLSearchParams(window.location.search);
+    var username = urlParams.get('username');
+
+    // Display welcome message
+    if (username) {
+        document.getElementById('welcomeMessage').innerText = "Hey " + username + ", Welcome to Daily Sleep Tracker!";
+    } else {
+        document.getElementById('welcomeMessage').innerText = "Welcome to Daily Sleep Tracker!";
+    }
+</script>
+</body>
+</html>

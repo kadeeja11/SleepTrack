@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .menu {
+            background-color: #f4f4f4;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .menu a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        .menu a:hover {
+            color: #666;
+        }
+        .logout {
+            color: red;
+            cursor: pointer;
+        }
+        .username {
+            font-weight: bold;
+        }
+        .content {
+            padding: 20px;
+            background-color: #fff;
+            margin: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .content h2 {
+            color: #333;
+        }
+        .content p {
+            color: #666;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <div class="username">Username</div>
+    <div class="logout">Logout</div>
+</div>
+<div class="menu">
+    <a href="#">Home</a>
+    <a href="#">My Collections</a>
+    <a href="#">My Orders</a>
+    <!-- Add more menu items as needed -->
+</div>
+<div class="content">
+    <h2>Welcome to Your Profile</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis nisi consectetur, fermentum urna at, malesuada nibh. Quisque euismod, odio eu fermentum tristique, neque mi pretium justo, a viverra odio dolor non lacus. Donec volutpat quam vel lacinia mollis. Nam dapibus turpis quis sapien euismod eleifend.</p>
+    <p>Phasellus in nulla ut arcu tempor egestas. Nulla facilisi. Sed viverra, sapien in sagittis vestibulum, nisi est ultricies nisi, in accumsan dui ipsum nec est. Fusce et aliquet ipsum, sed dignissim lectus. Nam tincidunt purus nec libero blandit, nec vestibulum turpis scelerisque.</p>
+</div>
+<script>
+    // Script for logout functionality
+    document.querySelector('.logout').addEventListener('click', function() {
+        // Implement logout functionality here
+        alert('Logout clicked!');
+    });
+</script>
+</body>
+</html>

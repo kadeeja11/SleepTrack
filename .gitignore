@@ -1,0 +1,17 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore compiled output
+WebApp/public/sleeptrack.html
+WebApp/public/sleeptrack.css
+WebApp/public/sleeptrack.js
+
+# Ignore local development server files
+.idea/
+
+# Ignore build output
+out/
+bin/
+
+# Ignore temporary files
+.DS_Store
