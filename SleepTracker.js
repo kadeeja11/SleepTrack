@@ -10,10 +10,11 @@ const expressJwt = require('express-jwt');
 const UserModel = require("./models/User");
 const SleepModel = require("./models/SleepModel");
 const cors = require('cors'); // Import cors package
-mongoose.set('strictQuery', true);
+
 
 // Mongoose file for connection
 const mongoose = require("mongoose");
+mongoose.set('strictQuery', true);
 mongoose
   .connect("mongodb://127.0.0.1:27017/SleepTracker", {
     useNewUrlParser: true,
