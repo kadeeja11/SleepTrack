@@ -149,7 +149,7 @@ function calculateDuration(sleepTime, wakeUpTime) {
 
 
 // Start the server
-const port = 8080;
+const port = 10000;
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
 });
