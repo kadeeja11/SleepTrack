@@ -18,7 +18,6 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
-  .set('strictQuery', true);
   .then(() => console.log("Connection successful"))
   .catch(err => console.log("Connection failed"));
 
