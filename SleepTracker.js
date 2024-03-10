@@ -14,7 +14,7 @@ const cors = require('cors'); // Import cors package
 
 // Mongoose file for connection
 const mongoose = require("mongoose");
-mongoose.set('strictQuery', true);
+mongoose.set('strictQuery', false);
 mongoose
   .connect("mongodb://127.0.0.1:27017/SleepTracker", {
     useNewUrlParser: true,
