@@ -1,3 +1,4 @@
+// Import necessary modules
 const express = require("express");
 const bodyParser = require("body-parser");
 const bcrypt = require('bcrypt');
@@ -11,17 +12,16 @@ const UserModel = require("./models/User");
 const SleepModel = require("./models/SleepModel");
 const cors = require('cors'); // Import cors package
 
-
 // Mongoose file for connection
 const mongoose = require("mongoose");
-mongoose.set('strictQuery', false);
-mongoose
-  .connect("mongodb://127.0.0.1:27017/SleepTracker", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  })
-  .then(() => console.log("Connection successful"))
-  .catch(err => console.log("Connection failed"));
+
+// Connect to MongoDB Atlas (online database)
+mongoose.connect("mongodb+srv://farhakadeeja630:farhakadeeja630@cluster0.3aebb35.mongodb.net/SleepTracker?retryWrites=true&w=majority", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => console.log("Connection successful"))
+.catch(err => console.log("Connection failed"));
 
 const app = express();
 
@@ -149,7 +149,7 @@ function calculateDuration(sleepTime, wakeUpTime) {
 
 
 // Start the server
-const port = 10000;
+const port = process.env.PORT || 8080;
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
 });
