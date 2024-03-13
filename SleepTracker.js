@@ -16,7 +16,8 @@ const cors = require('cors'); // Import cors package
 const mongoose = require("mongoose");
 
 // Connect to MongoDB Atlas (online database)
-mongoose.connect("mongodb+srv://farhakadeeja630:farhakadeeja630@cluster0.3aebb35.mongodb.net/SleepTracker?retryWrites=true&w=majority", {
+const MONGO_URI =`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.3aebb35.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`
+mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true
