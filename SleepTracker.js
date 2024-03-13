@@ -18,7 +18,8 @@ const mongoose = require("mongoose");
 // Connect to MongoDB Atlas (online database)
 mongoose.connect("mongodb+srv://farhakadeeja630:farhakadeeja630@cluster0.3aebb35.mongodb.net/SleepTracker?retryWrites=true&w=majority", {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+  useCreateIndex: true
 })
 .then(() => console.log("Connection successful"))
 .catch(err => console.log("Connection failed"));
