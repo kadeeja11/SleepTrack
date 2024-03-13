@@ -1,4 +1,11 @@
 // Extract the user ID from the URL
+document.getElementById("logoutButton").addEventListener("click", function() {
+            // Show confirmation dialog
+            if (confirm("Are you sure you want to logout?")) {
+                // Redirect to homepage
+                window.location.href = "/homepage.html";
+            }
+        });
 function getUserIdFromUrl() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);

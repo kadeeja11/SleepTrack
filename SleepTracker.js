@@ -16,11 +16,9 @@ const cors = require('cors'); // Import cors package
 const mongoose = require("mongoose");
 
 // Connect to MongoDB Atlas (online database)
-const MONGO_URI =`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.3aebb35.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`
-mongoose.connect(MONGO_URI, {
+mongoose.connect("mongodb+srv://farhakadeeja630:farhakadeeja630@cluster0.3aebb35.mongodb.net/SleepTracker?retryWrites=true&w=majority", {
   useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true
+  useUnifiedTopology: true
 })
 .then(() => console.log("Connection successful"))
 .catch(err => console.log("Connection failed"));
@@ -132,6 +130,17 @@ app.get("/sleeptrack", async (req, res) => {
   const filePath = path.join(__dirname, 'public', 'sleeptrack.html');
   res.sendFile(filePath);
 });
+
+// Add a route for logout
+app.get('/logout', (req, res) => {
+    req.session.destroy(err => {
+        if (err) {
+            return res.redirect('/profile');
+        }
+        res.redirect('/homepage.html');
+    });
+});
+
 
 
 function calculateDuration(sleepTime, wakeUpTime) {
